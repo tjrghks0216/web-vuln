@@ -15,9 +15,17 @@ sudo docker run -d -p "1018:80" --name studentWeb \
     -v "$BASE_DIR/webApp:/app" \
     mattrayner/lamp:0.8.0-2004-php7
 
-# 3. MySQL 부팅 대기
-echo "⏳ MySQL 서버 부팅 대기 중 (10초)..."
-sleep 10
+# 3. MySQL 서버가 완전히 부팅될 때까지 스마트하게 대기
+echo "⏳ MySQL 서버 부팅 대기 중 (최대 60초)..."
+for i in {1..30}; do
+    # mysqladmin ping 명령어로 DB가 응답하는지 체크
+    if sudo docker exec studentWeb mysqladmin ping -u root --silent; then
+        echo -e "\n✅ MySQL 부팅 완료!"
+        break
+    fi
+    echo -n "."
+    sleep 2
+done
 
 # 4. 데이터베이스 및 admin 계정 자동 셋업
 echo "🛠️ 데이터베이스와 admin 계정을 설정합니다..."
