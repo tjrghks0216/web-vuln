@@ -25,7 +25,7 @@ sudo apt install openssh-server -y
 **3. 로컬 PC(Windows/Mac) 터미널에서 SSH 접속**
 ```bash
 # 본인의 리눅스 계정명과 확인한 IP를 입력하여 접속
-ssh gildong@192.168.10.100
+ssh 계정명@192.168.10.100
 ```
 
 ---
