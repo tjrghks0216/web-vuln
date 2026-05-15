@@ -29,7 +29,7 @@
             <a href="/"
                 class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
                 <img src="/images/white_hat.png" style="width:5rem" class="me-2">
-                <span class="fs-4">SK 루키즈 31기 5조 헤더헌터</span>
+                <span class="fs-4">SK 쉴더스 루키즈 31기 5조 헤더헌터</span>
             </a>
 
             <ul class="nav nav-pills">
@@ -42,7 +42,8 @@
                 <li class="nav-item"><a href="free_board_list.php"
                         class="nav-link <?php echo ($current_tab == 'free_board') ? 'active' : '' ?>">자유게시판</a></li>
 
-                <li class="nav-item"><a href="mypage_password.php"
+                <!-- <li class="nav-item"><a href="mypage_password.php" -->
+                <li class="nav-item"><a href="mypage.php"
                         class="nav-link <?php echo ($current_tab == 'mypage') ? 'active' : '' ?>">마이페이지
                         (<?= $_SESSION['id'] ?>)</a></li>
                 <li class='nav-item'><a href='logout.php' class='nav-link'>로그아웃</a></li>

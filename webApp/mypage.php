@@ -8,9 +8,10 @@ if (!isset($_SESSION['id']) || $_SESSION['id'] == NULL) {
 include "include/dbconfig.php";
 include "include/member.php";
 $mem = new Member($db);
-if (!isset($_POST['password']) || $_POST['password'] == '' || !$mem->login($_SESSION['id'], $_POST['password'])) {
-    die("<script>alert('허용되지 않은 접근입니다.');location.href='index.php';</script>");
-}
+
+# if (!isset($_POST['password']) || $_POST['password'] == '' || !$mem->login($_SESSION['id'], $_POST['password'])) {
+#     die("<script>alert('허용되지 않은 접근입니다.');location.href='index.php';</script>");
+# }
 $user_info = $mem->user_info($_SESSION['id']);
 $current_tab = 'mypage';
 $js_array = ['js/mypage.js']; // js 파일 삽입용 문자열 배열

@@ -29,8 +29,12 @@ if ($mode == 'input') {
 
     $arr = [
         'id' => $id,
-        'subject' => htmlentities($subject),
-        'content' => htmlentities($content)
+        // 제목 xss 일부러 뚫어둠
+        //'subject' => htmlentities($subject), 
+        'subject' => $subject,
+        // 글내용 xss 일부러 뚫어둠
+        //'content' => htmlentities($content)
+        'content' => $content
     ];
 
     if ($file != '') {
@@ -56,8 +60,12 @@ if ($mode == 'input') {
 
     $arr = [
         'idx' => $idx,
-        'subject' => htmlentities($subject),
-        'content' => htmlentities($content)
+        // 제목 xss 일부러 뚫어둠
+        //'subject' => htmlentities($subject), 
+        'subject' => $subject,
+        // 글내용 xss 일부러 뚫어둠
+        //'content' => htmlentities($content)
+        'content' => $content
     ];
 
     if ($file != '') {
